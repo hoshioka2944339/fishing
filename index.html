@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>幻想おさかな釣り</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hud">
+      <div>
+        <p class="eyebrow">ゆっくり タップで あそべるよ</p>
+        <h1>幻想おさかな釣り</h1>
+      </div>
+      <button id="bookButton" class="book-button" type="button" aria-expanded="false" aria-controls="bookPanel">
+        ずかん
+      </button>
+    </header>
+
+    <section class="game-card">
+      <div class="status-strip">
+        <div class="progress-box">
+          <span id="caughtCount">0</span>
+          <small>/ 18 ひき</small>
+        </div>
+        <p id="message" class="message">くろい さかなかげを タップしてね</p>
+      </div>
+
+      <div id="sea" class="sea" aria-label="おさかなつりゲーム">
+        <div class="sky-glow"></div>
+        <div class="water-line"></div>
+
+        <div class="girl-wrap">
+          <img id="girlImage" class="girl" src="girl_image/001.png" alt="魚つりをしている女の子">
+          <button id="catchButton" class="catch-button hidden" type="button">タップ！</button>
+        </div>
+
+        <div class="shadow-row">
+          <button class="fish-shadow shadow-one" data-shadow type="button" aria-label="さかなかげ"></button>
+          <button class="fish-shadow shadow-two" data-shadow type="button" aria-label="さかなかげ"></button>
+          <button class="fish-shadow shadow-three" data-shadow type="button" aria-label="さかなかげ"></button>
+          <button class="fish-shadow shadow-four" data-shadow type="button" aria-label="さかなかげ"></button>
+        </div>
+
+        <div class="catch-bubble">
+          <img id="caughtFishImage" class="caught-fish hidden" src="" alt="">
+          <div id="sparkles" class="sparkles hidden" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div id="successPanel" class="overlay-panel hidden">
+          <p class="panel-badge">つれたよ</p>
+          <img id="panelFishImage" class="panel-fish" src="" alt="">
+          <p id="panelFishName" class="panel-fish-name"></p>
+          <button id="continueButton" class="primary-button" type="button">つぎへ</button>
+        </div>
+
+        <div id="startPanel" class="overlay-panel">
+          <p class="panel-badge">かんたん 2タップ</p>
+          <h2>うきの したの<br>くろい さかなかげを タップしてね</h2>
+          <button id="startButton" class="primary-button" type="button">はじめる</button>
+        </div>
+
+        <button id="seaButton" class="sea-button" type="button" aria-label="ゲームをあそぶ"></button>
+      </div>
+    </section>
+
+    <aside id="bookPanel" class="book-panel hidden" aria-hidden="true">
+      <div class="book-header">
+        <div>
+          <p class="eyebrow">つれた おさかなが のこるよ</p>
+          <h2>おさかなずかん</h2>
+        </div>
+        <button id="closeBookButton" class="close-button" type="button">とじる</button>
+      </div>
+      <div id="bookGrid" class="book-grid"></div>
+      <button id="resetButton" class="reset-button" type="button">ずかんを さいしょから</button>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
